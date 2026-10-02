@@ -10,7 +10,7 @@
 ================================================================================
 
 Email: azayrahmad@gmail.com  |  Phone: +62 852 1752 0879
-LinkedIn: linkedin.com/in/aziz-rahmad
+: .com/in/aziz-rahmad
 
 ________________________________________________________________________________
 
@@ -155,7 +155,7 @@ ________________________________________________________________________________
 >>> CERTIFICATIONS
 ________________________________________________________________________________
 
-    [X] Node.js Essential Training                       LinkedIn (Jul 2024)
+    [X] Node.js Essential Training                        (Jul 2024)
     [X] Career Essentials in GitHub Professional         GitHub (Jun 2024)
     [X] Docker Foundations Professional                  Docker (Jun 2024)
     [X] Foundational C#                                  Microsoft (May 2024)

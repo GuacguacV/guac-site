@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+.bio-page {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 22px 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Pixelify Sans", sans-serif;
+  color: #040504;
+
+  background: #866696;
+  overflow: auto;
+}
+
+/* ---------- Header ---------- */
+
+.bio-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bio-name {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 5px;
+}
+
+.bio-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ---------- Divider ---------- */
+
+.bio-divider {
+  height: 2px;
+  background: #040504;
+  margin: 14px 0 18px;
+  flex-shrink: 0;
+}
+
+/* ---------- Main profile rectangle ---------- */
+
+.bio-main {
+  display: flex;
+  width: 100%;
+  min-height: 250px;
+
+  border: 2px solid #040504;
+  background: #a982b7;
+
+  box-shadow: 5px 5px 0 #040504;
+}
+
+/* ---------- Profile / PFP ---------- */
+
+.bio-profile {
+  width: 155px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  border-right: 2px solid #040504;
+  box-sizing: border-box;
+}
+
+.bio-pfp-placeholder {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 12px;
+  .bio-pfp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #c0c0c0;
+
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+
+  box-shadow:
+    inset 1px 1px #dfdfdf,
+    inset -1px -1px #808080;
+
+  font-size: 44px;
+  font-weight: bold;
+  color: #404040;
+}
+
+.bio-profile-name {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bio-profile-title {
+  margin-top: 3px;
+
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ---------- Interests + Games ---------- */
+
+.bio-lists {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.bio-section {
+  flex: 1;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+
+.bio-section + .bio-section {
+  border-left: 2px solid #040504;
+}
+
+.bio-section h2 {
+  margin: 0 0 12px;
+
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.bio-section ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.bio-section li::before {
+  content: "▸ ";
+  font-weight: 700;
+}
+
+/* ---------- About Me ---------- */
+
+.bio-about {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 22px;
+  padding: 16px 20px 18px;
+
+  border: 2px solid #040504;
+  background: #b89254;
+
+  box-shadow: 5px 5px 0 #040504;
+}
+
+.bio-about-label {
+  margin-bottom: 9px;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.bio-about p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  color: #040504;
+}

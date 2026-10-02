@@ -165,7 +165,8 @@ export async function renderFileIcon(fileName, fullPath, isDir, options = {}) {
       );
       const data = JSON.parse(content);
       if (data.type === "shortcut") {
-        if (data.appId) {
+  if (data.appId) {
+    iconDiv.dataset.appId = data.appId;
           const app = apps.find((a) => a.id === data.appId);
           if (app) {
             iconObj = app.icon;

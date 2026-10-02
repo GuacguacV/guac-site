@@ -1,4 +1,6 @@
 import { ICONS } from './icons.js';
+import { BioApp } from '../shell/bio/bio-app.js';
+import { AchievementsApp } from '../shell/achievements/achievements-app.js'
 import { getAgentMenuItems } from '../apps/agent/agent.js';
 import { getESheepMenuItems } from '../apps/esheep/esheep.js';
 import { getWebampMenuItems } from '../apps/webamp/webamp.js';
@@ -556,17 +558,28 @@ export const appRegistry = {
   },
     importApp: () => import("../apps/webamp/webamp-app.js")
   },
-  "wordpad": {
+    "wordpad": {
     config: {
-    id: "wordpad",
-    title: "WordPad",
-    description: "A simple rich text editor.",
-    icon: ICONS.wordpad, category: "Accessories",
-    width: 600,
-    height: 400,
-    resizable: true,
-    isSingleton: false,
-  },
+      id: "wordpad",
+      title: "WordPad",
+      description: "A simple rich text editor.",
+      icon: ICONS.wordpad,
+      category: "Accessories",
+      width: 600,
+      height: 400,
+      resizable: true,
+      isSingleton: false,
+    },
+
     importApp: () => import("../apps/wordpad/word-pad-app.js")
   },
+
+  "bio": {
+    config: BioApp.config,
+    importApp: () => import("../shell/bio/bio-app.js"),
+  },
+"achievements": {
+  config: AchievementsApp.config,
+  importApp: () => import("../shell/achievements/achievements-app.js"),
+},
 };

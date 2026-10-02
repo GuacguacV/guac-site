@@ -14,6 +14,7 @@ import { getAssociation } from '../../system/directory.js';
 import { IconManager } from './icon-manager.js';
 import { isZenFSPath, getZenFSFileUrl } from '../../system/zenfs-utils.js';
 import { fs } from "@zenfs/core";
+import { existsAsync } from "../../system/zenfs-utils.js";
 import { ShellManager } from '../../shell/explorer/extensions/shell-manager.js';
 import { renderFileIcon } from '../../shell/explorer/interface/file-icon-renderer.js';
 import { FileOperations } from '../../shell/explorer/file-operations/file-operations.js';
@@ -454,14 +455,15 @@ async function refreshIcons() {
       desktopController.iconManager.configureIcon(iconDiv);
 
       iconDiv.addEventListener("click", (e) => {
-        if (desktopController._isRenaming) return;
         if (
-          desktopController.lastSelectedIcon === iconDiv &&
-          Date.now() - desktopController.selectionTimestamp > 500
-        ) {
-          desktopController.enterRenameMode(iconDiv);
-          e.stopPropagation();
-        }
+  desktopController.lastSelectedIcon === iconDiv &&
+  Date.now() - desktopController.selectionTimestamp > 500
+) {
+  if (iconDiv.dataset.appId !== "achievements") {
+    desktopController.enterRenameMode(iconDiv);
+  }
+  e.stopPropagation();
+}
       });
 
       if (!layout.autoArrange) {
@@ -573,12 +575,65 @@ export async function initDesktop(profile = null) {
   await applyTheme();
   await applyWallpaper();
   applyMonitorType();
+  await launchApp("bio");
+  
 
-  const desktop = document.querySelector(".desktop");
-  desktop.setAttribute("data-current-path", "/Desktop");
-  desktopController = new DesktopController(desktop);
+const desktop = document.querySelector(".desktop");
 
-  desktopController.iconManager = new IconManager(desktop, {
+desktop.setAttribute("data-current-path", "/Desktop");
+
+try {
+  const desktopPath = "/C:/WINDOWS/Desktop";
+
+  await fs.promises.mkdir(desktopPath, { recursive: true });
+
+  const desktopFiles = await fs.promises.readdir(desktopPath);
+
+  let achievementsShortcutPath = null;
+
+for (const file of desktopFiles) {
+  if (!file.endsWith(".lnk.json") && !file.endsWith(".lnk")) {
+    continue;
+  }
+
+  try {
+    const shortcutPath = `${desktopPath}/${file}`;
+    const content = await fs.promises.readFile(shortcutPath, "utf8");
+    const data = JSON.parse(content);
+
+    if (data.type === "shortcut" && data.appId === "achievements") {
+      achievementsShortcutPath = shortcutPath;
+      break;
+    }
+  } catch (error) {
+    // Ignore invalid shortcut files
+  }
+}
+
+const correctShortcutPath = `${desktopPath}/Achievements.exe.lnk.json`;
+
+if (achievementsShortcutPath && achievementsShortcutPath !== correctShortcutPath) {
+  await fs.promises.rename(
+    achievementsShortcutPath,
+    correctShortcutPath,
+  );
+} else if (!achievementsShortcutPath) {
+  const shortcutData = {
+    type: "shortcut",
+    appId: "achievements",
+    args: null,
+  };
+
+  await fs.promises.writeFile(
+    correctShortcutPath,
+    JSON.stringify(shortcutData, null, 2),
+  );
+}
+} catch (error) {
+  console.error("Failed to create Achievements shortcut:", error);
+}
+
+desktopController = new DesktopController(desktop);  desktopController.iconManager = new IconManager(desktop, {
     iconSelector: ".explorer-icon",
     onDragStart: (e, icon, selectedIcons, x, y, isTouch) => {
       DragDropManager.startDrag(

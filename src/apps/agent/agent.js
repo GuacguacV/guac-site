@@ -344,7 +344,7 @@ const findIcon = (label) => {
   return null;
 };
 
-const findWindowCloseButton = (instance) => {
+const findWindow = (instance) => {
   if (instance && instance.win && instance.win.element) {
     return (
       instance.win.element.querySelector(".title-bar-controls .close") || instance.win.element.querySelector(".close")
@@ -451,9 +451,9 @@ async function startTutorial(agent) {
 
     // 3. Close app before next step
     if (instance) {
-      const closeButton = findWindowCloseButton(instance);
-      if (closeButton) {
-        const center = getElementCenter(closeButton);
+      const windowElement = findWindow(instance);
+      if (windowElement) { 
+        const center = getElementCenter();
         await agent.moveTo(center.x + 40, center.y + 40);
         await agent.gestureAt(center.x, center.y);
       }

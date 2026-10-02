@@ -3,7 +3,7 @@ import { getSoundSchemeName, getActiveTheme } from './theme-manager.js';
 import { getItem, setItem, LOCAL_STORAGE_KEYS } from './local-storage.js';
 import { isZenFSPath, getZenFSFileUrl } from './zenfs-utils.js';
 
-let globalVolume = getItem(LOCAL_STORAGE_KEYS.VOLUME) ?? 1.0;
+let globalVolume = getItem(LOCAL_STORAGE_KEYS.VOLUME) ?? 0.15;
 let globalMuted = getItem(LOCAL_STORAGE_KEYS.MUTED) ?? false;
 
 /**

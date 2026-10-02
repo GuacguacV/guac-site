@@ -125,24 +125,16 @@ class Taskbar {
       <div class="taskbar-divider"></div>
       <div class="taskbar-divider-handler"></div>
       <nav class="taskbar-icon-area" aria-label="Quick Launch">
-        <button class="taskbar-icon lightweight show-desktop" title="Show Desktop" aria-label="Show Desktop">
-          <img src="${ICONS.desktop_old[16]}" alt="Show Desktop" loading="lazy">
-        </button>
-        <button class="taskbar-icon lightweight"
-                title="LinkedIn Profile"
-                aria-label="Open LinkedIn Profile"
-                data-url="https://www.linkedin.com/in/aziz-rahmad">
-          <img src="https://www.google.com/s2/favicons?domain=linkedin.com"
-               alt="LinkedIn" loading="lazy">
-        </button>
-        <button class="taskbar-icon lightweight"
-                title="GitHub Profile"
-                aria-label="Open GitHub Profile"
-                data-url="https://www.github.com/azayrahmad">
-          <img src="https://www.google.com/s2/favicons?domain=github.com"
-               alt="GitHub" loading="lazy">
-        </button>
-      </nav>
+  <button class="taskbar-icon lightweight show-desktop" title="Show Desktop" aria-label="Show Desktop">
+    <img src="${ICONS.desktop_old[16]}" alt="Show Desktop" loading="lazy">
+  </button>
+
+<button class="taskbar-icon lightweight achievements-launch"
+        title="Achievements"
+        aria-label="Open Achievements">
+  <img src="${ICONS.achievements[16]}" alt="Achievements" loading="lazy">
+  </button>
+</nav>
       <div class="taskbar-divider"></div>
       <div class="taskbar-divider-handler"></div>
       <nav class="taskbar-app-area" aria-label="Running Applications">
@@ -259,13 +251,17 @@ class Taskbar {
   /**
    * Bind desktop and taskbar events
    */
-  bindDesktopEvents() {
-    const showDesktopButton = document.querySelector(SELECTORS.SHOW_DESKTOP);
-    this.addTrackedEventListener(showDesktopButton, "click", () =>
-      this.showDesktop(),
-    );
-  }
+bindDesktopEvents() {
+  const showDesktopButton = document.querySelector(SELECTORS.SHOW_DESKTOP);
+  this.addTrackedEventListener(showDesktopButton, "click", () =>
+    this.showDesktop(),
+  );
 
+  const achievementsButton = document.querySelector(".achievements-launch");
+  this.addTrackedEventListener(achievementsButton, "click", () =>
+    window.System.launchApp("achievements"),
+  );
+}
   /**
    * Bind external link events
    */

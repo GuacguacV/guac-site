@@ -23,7 +23,7 @@ Once verified, you should submit your sitemap to speed up indexing:
 
 ## 3. Social Media Sharing
 
-The app is now configured with OpenGraph and Twitter Card tags. When you share the URL on platforms like Twitter/X, Facebook, or LinkedIn, it will display a rich preview with:
+The app is now configured with OpenGraph and Twitter Card tags. When you share the URL on platforms like Twitter/X, Facebook, or , it will display a rich preview with:
 *   **Title**: Windows 98 Web Edition
 *   **Description**: A nostalgic, fully functional Windows 98 simulation...
 *   **Image**: A high-quality screenshot of the desktop.
@@ -32,7 +32,7 @@ You can test how your link looks using these tools:
 *   **Facebook**: [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
     *   *Note: You may see a warning about a missing `fb:app_id`. This is only required if you want to use Facebook Insights (analytics). The link preview will still work perfectly without it. If you want to remove the warning, you must create an app at [developers.facebook.com](https://developers.facebook.com/apps/) and add `<meta property="fb:app_id" content="YOUR_APP_ID" />` to `index.html`.*
 *   **Twitter/X**: The official validator is now deprecated. To test your card, simply paste the link into a new tweet draft on Twitter/X, and the preview should generate automatically after a second.
-*   **LinkedIn**: [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
+*   ****: [ Post Inspector](https://www..com/post-inspector/)
 
 ## 4. Content Updates
 
