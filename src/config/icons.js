@@ -16,8 +16,8 @@ export const ICONS = {
     32: new URL("../assets/icons/COMCTL32_20481-32.png", import.meta.url).href,
   },
   achievements: {
-  16: "/win98-web/icons/16x16trophy-pixel-art.png",
-  32: "/win98-web/icons/16x16trophy-pixel-art.png",
+  16: "/guac-site/icons/16x16trophy-pixel-art.png",
+  32: "/guac-site/icons/16x16trophy-pixel-art.png",
   },
   pdf: {
     16: new URL("../assets/icons/word_001-16.png", import.meta.url).href,

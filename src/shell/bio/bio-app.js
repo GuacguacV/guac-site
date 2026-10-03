@@ -45,7 +45,7 @@ export class BioApp extends Application {
           <div class="bio-profile">
             <div class="bio-pfp-placeholder">
   <img
-    src="/win98-web/icons/ME-ezgif.com-resize.gif"
+    src="/guac-site/icons/ME-ezgif.com-resize.gif"
     alt="Alivent"
     class="bio-pfp"
   />
