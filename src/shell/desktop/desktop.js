@@ -658,6 +658,83 @@ console.log("Creating Visitor Stats shortcut...");
   console.error("Failed to create Visitor Stats shortcut:", error);
 }
 
+try {
+  const desktopPath = "/C:/WINDOWS/Desktop";
+  const correctShortcutPath = `${desktopPath}/Derg.exe.lnk.json`;
+
+  const shortcutData = {
+    type: "shortcut",
+    appId: "derg",
+    args: null,
+    icon: "/guac-site/icons/derg.png",
+  };
+
+  console.log("Creating Derg shortcut...");
+  const exists = await existsAsync(correctShortcutPath);
+
+  if (!exists) {
+    await fs.promises.writeFile(
+      correctShortcutPath,
+      JSON.stringify(shortcutData, null, 2),
+    );
+
+    console.log("Derg shortcut written to:", correctShortcutPath);
+  }
+} catch (error) {
+  console.error("Failed to create Derg shortcut:", error);
+}
+
+try {
+  const desktopPath = "/C:/WINDOWS/Desktop";
+  const shortcutPath = `${desktopPath}/FriendS.exe.lnk.json`;
+
+  const shortcutData = {
+    type: "shortcut",
+    appId: "friends",
+    args: null,
+    icon: "/guac-site/icons/aliens.png",
+  };
+
+  console.log("Creating FriendS shortcut...");
+  const exists = await existsAsync(shortcutPath);
+
+  if (!exists) {
+    await fs.promises.writeFile(
+      shortcutPath,
+      JSON.stringify(shortcutData, null, 2),
+    );
+
+    console.log("FriendS shortcut written to:", shortcutPath);
+  }
+} catch (error) {
+  console.error("Failed to create FriendS shortcut:", error);
+}
+
+try {
+  const desktopPath = "/C:/WINDOWS/Desktop";
+  const shortcutPath = `${desktopPath}/Logs.txt.lnk.json`;
+
+  const shortcutData = {
+    type: "shortcut",
+    appId: "logs",
+    args: null,
+    icon: "/guac-site/icons/silly-dog.png",
+  };
+
+  console.log("Creating Logs shortcut...");
+  const exists = await existsAsync(shortcutPath);
+
+  if (!exists) {
+    await fs.promises.writeFile(
+      shortcutPath,
+      JSON.stringify(shortcutData, null, 2),
+    );
+
+    console.log("Logs shortcut written to:", shortcutPath);
+  }
+} catch (error) {
+  console.error("Failed to create Logs shortcut:", error);
+}
 desktopController = new DesktopController(desktop);  desktopController.iconManager = new IconManager(desktop, {
     iconSelector: ".explorer-icon",
     onDragStart: (e, icon, selectedIcons, x, y, isTouch) => {

@@ -1,3 +1,4 @@
+
 import { ShowDialogWindow } from '../shared/components/dialog-window.js';
 import { createTaskbarButton, createTrayIcon } from '../shell/taskbar/taskbar.js';
 import { appManager } from './app-manager.js';
@@ -13,7 +14,7 @@ export class Application {
       );
     }
 
-    this.config = config; // Store the entire config object
+    this.config = config;
     this.id = config.id;
     this.title = config.title;
     this.icon = config.icon;
@@ -23,7 +24,6 @@ export class Application {
     this.tray = config.tray;
     this.win = null;
 
-    // Store window properties
     this.width = config.width;
     this.height = config.height;
     this.resizable = config.resizable;
@@ -39,7 +39,6 @@ export class Application {
       if (typeof data === "string") {
         filePath = data;
       } else {
-        // Handle both file objects and file path strings
         filePath = data.file || data.filePath || data;
         windowIdOverride = data.windowId;
       }
@@ -51,8 +50,10 @@ export class Application {
 
     if (openApps.has(instanceKey)) {
       const existingApp = openApps.get(instanceKey);
+
       if (existingApp.win) {
         const $win = $(existingApp.win.element);
+
         if ($win.is(":visible")) {
           existingApp.win.focus();
         } else {
@@ -60,9 +61,9 @@ export class Application {
           setTimeout(() => existingApp.win.focus(), 0);
         }
       } else if (!existingApp.win && existingApp.isSingleton) {
-        // It's a non-windowed singleton app, delegate to its own launch logic
         existingApp._onLaunch(filePath);
       }
+
       return;
     }
 
@@ -84,9 +85,11 @@ export class Application {
 
   _getWindowId(filePath) {
     const fileName = filePath?.name || filePath?.filename;
+
     if (filePath && typeof filePath === "object" && fileName) {
       return `${this.id}-${fileName}`;
     }
+
     return filePath && typeof filePath === "string"
       ? `${this.id}-${filePath}`
       : this.id;
@@ -105,17 +108,22 @@ export class Application {
     this.win.element.dataset.appId = this.id;
 
     this.win.onClosed(() => {
+      console.log("WINDOW CLOSED:", this.id, instanceKey);
+
       if (typeof this._onClose === "function") {
         this._onClose();
       }
+
       if (this.hasTaskbarButton) {
         const taskbarButton = document.querySelector(
           `.taskbar-button[for="${windowId}"]`,
         );
+
         if (taskbarButton) {
           taskbarButton.remove();
         }
       }
+
       openWindows.delete(windowId);
       appManager.closeApp(instanceKey);
     });
@@ -126,6 +134,7 @@ export class Application {
         this.icon,
         this.title,
       );
+
       this.win.element.classList.add("app-window");
       this.win.setMinimizeTarget(taskbarButton);
     }
@@ -136,9 +145,11 @@ export class Application {
 
   showProperties() {
     let text = `<b>${this.config.title}</b>`;
+
     if (this.config.description) {
       text += `<br><br>${this.config.description}`;
     }
+
     if (this.config.summary) {
       text += `<br><br>${this.config.summary}`;
     }

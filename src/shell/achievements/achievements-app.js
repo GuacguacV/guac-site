@@ -14,79 +14,98 @@ import "./achievements.css";
  */
 
 const ACHIEVEMENTS = [
-  {
-    type: "real",
-    title: "LAW STUDENT",
-    description:
-      "Studying Law and somehow still voluntarily signing up for more work.",
-  },
-  {
-    type: "real",
-    title: "BAIL CHALLENGE",
-    description:
-      "Scored high in a Bail Challenge, competing against other law students and nearly making it to the semi-finals.",
-  },
-  {
-    type: "real",
-    title: "MOOTER",
-    description:
-      "So close yet so far; Participated and reached semi-finalist status in various mooting and advocacy competitions.",
-  },
-  {
-    type: "real",
-    title: "NEGOTIATOR",
-    description:
-      "Took part in a Negotiations Challenge and bargained like his life depended on it.",
-  },
-  {
-    type: "real",
-    title: "FORVIS MAZARS",
-    description:
-      "Gained experience in tax advisory, legal research, and professional work through Forvis Mazars.",
-  },
-  {
-    type: "real",
-    title: "PRO BONO",
-    description:
-      "Worked on the Sequentus Pro Bono scheme. Ensured that progress was being made weekly.",
-  },
-  {
-    type: "real",
-    title: "SPACE LAWYER?",
-    description:
-      "Works with the SSI, combining an interest in astronomy with a questionably low amount of legal knowledge.",
-  },
-  {
-    type: "funny",
-    title: "CHRONICALLY AMBITIOUS",
-    description:
-      "Has somehow developed the habit of applying for opportunities before deciding whether there is enough time to actually do them.",
-  },
-  {
-    type: "funny",
-    title: "ONE MORE APPLICATION",
-    description:
-      "Opened another application form despite already having several deadlines approaching.",
-  },
-  {
-    type: "funny",
-    title: "SLEEP IS OPTIONAL",
-    description:
-      "Successfully demonstrated that productivity can, in fact, be achieved through increasingly questionable sleep schedules (potentially suffering from a sleeping disorder).",
-  },
-  {
-    type: "funny",
-    title: "OVERQUALIFIED",
-    description:
-      "Currently attempting to become increasingly overqualified for problems that have not yet occurred.",
-  },
-  {
-    type: "funny",
-    title: "WEBSITE DEVELOPER",
-    description:
-      "Started building a Windows 98 website despite having very little idea what most of the code does.",
-  },
+{
+type: "real",
+title: "LAW STUDENT",
+description:
+"Studying Law and somehow still voluntarily signing up for more work.",
+},
+{
+type: "real",
+title: "FORVIS MAZARS",
+description:
+"Gained experience in tax advisory, legal research, and professional work through Forvis Mazars.",
+},
+{
+type: "real",
+title: "PRO BONO",
+description:
+"Worked on the Sequentus Pro Bono scheme. Ensured that progress was being made weekly.",
+},
+{
+type: "real",
+title: "PRO BONO+",
+description:
+"Got into an award-winning pro bono scheme. Only twenty-two applicants out of hundreds were selected.",
+},
+{
+type: "real",
+title: "SPACE LAWYER?",
+description:
+"Works with the SSI, combining an interest in astronomy with a questionably low amount of legal knowledge.",
+},
+{
+type: "real",
+title: "SPACE LECTURER",
+description:
+"Delivered two lectures on destructive celestial objects to an audience of approximately 200.",
+},
+{
+type: "real",
+title: "BAIL CHALLENGE",
+description:
+"Scored high in a Bail Challenge, competing against other law students and nearly making it to the semi-finals.",
+},
+{
+type: "real",
+title: "MOOTER",
+description:
+"So close yet so far; Took part in mooting and advocacy competitions, nearly reaching the finals somewhere along the way.",
+},
+{
+type: "real",
+title: "NEGOTIATOR",
+description:
+"Took part in a Negotiations Challenge and bargained like his life depended on it.",
+},
+{
+type: "real",
+title: "CHEMIST?",
+description:
+"Developed a sunscreen formulation using fallen wildberry fruits.",
+},
+{
+type: "funny",
+title: "CHRONICALLY AMBITIOUS",
+description:
+"Has somehow developed the habit of applying for opportunities before deciding whether there is enough time to actually do them.",
+},
+{
+type: "funny",
+title: "ONE MORE APPLICATION",
+description:
+"Opened another application form despite already having several deadlines approaching.",
+},
+{
+type: "funny",
+title: "SLEEP IS OPTIONAL",
+description:
+"Successfully demonstrated that productivity can, in fact, be achieved through increasingly questionable sleep schedules (potentially suffering from a sleeping disorder).",
+},
+{
+type: "funny",
+title: "OVERQUALIFIED",
+description:
+"Currently attempting to become increasingly overqualified for problems that have not yet occurred.",
+},
+{
+type: "funny",
+title: "WEBSITE DEVELOPER",
+description:
+"Started building a Windows 98 website despite having very little idea what most of the code does.",
+},
 ];
+
 
 export class AchievementsApp extends Application {
   static config = {
@@ -110,7 +129,7 @@ export class AchievementsApp extends Application {
       title: this.title,
       outerWidth: this.width,
       outerHeight: this.height,
-      resizable: this.resizable,
+      resizable: false,
       minimizeButton: true,
       maximizeButton: true,
       closable: true,

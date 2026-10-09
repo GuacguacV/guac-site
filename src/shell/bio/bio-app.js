@@ -23,7 +23,7 @@ export class BioApp extends Application {
       title: this.title,
       outerWidth: this.width,
       outerHeight: this.height,
-      resizable: this.resizable,
+      resizable: false,
       minimizeButton: true,
       maximizeButton: true,
       closable: false,
@@ -35,7 +35,7 @@ export class BioApp extends Application {
 
         <div class="bio-header">
           <div class="bio-name">ALIVENT.EXE</div>
-          <div class="bio-title">Law student · CONTACT: yes.iexist0@gmail.com</div>
+          <div class="bio-title">CONTACT: yes.iexist0@gmail.com</div>
         </div>
 
         <div class="bio-divider"></div>

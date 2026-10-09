@@ -9,7 +9,7 @@ export class VisitorStatsApp extends Application {
     description: "Website visitor statistics.",
     icon: ICONS.visitorStats,
     width: 420,
-    height: 340,
+    height: 400,
     resizable: false,
     isSingleton: true,
   };
@@ -31,26 +31,82 @@ export class VisitorStatsApp extends Application {
     });
 
     win.$content.html(`
-      <div style="padding: 20px; font-family: Arial, sans-serif;">
-        <h2 style="margin-top: 0;">Visitor Statistics</h2>
+      <style>
+        .visitor-page {
+          box-sizing: border-box;
+          width: 100%;
+          min-height: 100%;
+          padding: 20px;
+          font-family: "Pixelify Sans", sans-serif;
+          color: #040504;
+          background: #866696;
+        }
 
-        <p>
+        .visitor-heading {
+          margin: 0 0 22px;
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+
+        .visitor-stat {
+          margin: 16px 0;
+          padding: 12px 14px;
+          background: #a982b7;
+          border: 2px solid #040504;
+          box-shadow: 3px 3px 0 #040504;
+          font-size: 16px;
+        }
+
+        .visitor-number {
+          font-family: Arial, sans-serif;
+          font-size: 25px;
+          font-weight: 700;
+          margin-left: 5px;
+        }
+
+        .visitor-divider {
+          border: 0;
+          border-top: 2px solid #040504;
+          margin: 24px 0 16px;
+        }
+
+        .visitor-note {
+          font-size: 13px;
+          line-height: 1.6;
+        }
+
+        .visitor-disclaimer {
+          font-size: 11px;
+          line-height: 1.6;
+          opacity: 0.85;
+        }
+      </style>
+
+      <div class="visitor-page">
+        <h2 class="visitor-heading">VISITOR STATISTICS</h2>
+
+        <div class="visitor-stat">
           Total visits:
-          <strong id="visitor-total">Loading...</strong>
-        </p>
+          <strong class="visitor-number" id="visitor-total">
+            Loading...
+          </strong>
+        </div>
 
-        <p>
+        <div class="visitor-stat">
           Today's visits:
-          <strong id="visitor-today">Loading...</strong>
-        </p>
+          <strong class="visitor-number" id="visitor-today">
+            Loading...
+          </strong>
+        </div>
 
-        <hr>
+        <hr class="visitor-divider">
 
-        <p style="font-size: 12px;">
+        <p class="visitor-note">
           Statistics provided by GoatCounter.
         </p>
 
-        <p style="font-size: 11px;">
+        <p class="visitor-disclaimer">
           Note: Visitor statistics may be incomplete for visitors using
           ad blockers or privacy extensions that block analytics.
         </p>

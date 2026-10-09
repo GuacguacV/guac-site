@@ -23,6 +23,18 @@ export const ICONS = {
   16: "/guac-site/icons/bar-chart-pixel.png",
   32: "/guac-site/icons/bar-chart-pixel.png",
 },
+derg: {
+  16: "/guac-site/icons/derg.png",
+  32: "/guac-site/icons/derg.png",
+},
+friends: {
+  16: "/guac-site/icons/aliens.png",
+  32: "/guac-site/icons/aliens.png",
+},
+logs: {
+  16: "/guac-site/icons/silly-dog.png",
+  32: "/guac-site/icons/silly-dog.png",
+},
   pdf: {
     16: new URL("../assets/icons/word_001-16.png", import.meta.url).href,
     32: new URL("../assets/icons/word_001-32.png", import.meta.url).href,

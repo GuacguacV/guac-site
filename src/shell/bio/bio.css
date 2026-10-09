@@ -12,7 +12,13 @@
   font-family: "Pixelify Sans", sans-serif;
   color: #040504;
 
-  background: #866696;
+    background-color: #282359;
+  background-image: url("/guac-site/icons/aurora-pixel.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+
   overflow: auto;
 }
 
@@ -54,7 +60,7 @@
   min-height: 250px;
 
   border: 2px solid #040504;
-  background: #a982b7;
+  background: #343078;
 
   box-shadow: 5px 5px 0 #040504;
 }
@@ -72,8 +78,9 @@
 
   padding: 18px;
 
-  border-right: 2px solid #040504;
-  box-sizing: border-box;
+border-right: 2px solid #17132f;
+background: #282359;
+color: #f5f2ff;  box-sizing: border-box;
 }
 
 .bio-pfp-placeholder {
@@ -133,7 +140,7 @@
 }
 
 .bio-section + .bio-section {
-  border-left: 2px solid #040504;
+  border-left: 2px solid #17132f;
 }
 
 .bio-section h2 {
@@ -170,7 +177,8 @@
   padding: 16px 20px 18px;
 
   border: 2px solid #040504;
-  background: #b89254;
+  background: #493da5;
+color: #f5f2ff;
 
   box-shadow: 5px 5px 0 #040504;
 }
@@ -189,5 +197,17 @@
   font-size: 14px;
   line-height: 1.55;
 
-  color: #040504;
+  color: #f5f2ff;
+}
+.bio-page,
+.bio-page * {
+  color: #f5f2ff;
+}
+
+
+
+.bio-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
 }

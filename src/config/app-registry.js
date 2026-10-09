@@ -94,6 +94,48 @@ export const appRegistry = {
     importApp: () =>
       import("../shell/visitor-stats/visitor-stats-app.js"),
   },
+  "derg": {
+    config: {
+      id: "derg",
+      title: "Derg",
+      description: "A memorial for Derg.",
+      icon: ICONS.derg,
+      width: 440,
+      height: 380,
+      resizable: false,
+      isSingleton: true,
+    },
+    importApp: () =>
+      import("../shell/derg/derg-app.js"),
+  },
+
+"friends": {
+  config: {
+    id: "friends",
+    title: "FriendS",
+    description: "A little directory of my friends.",
+    icon: ICONS.friends,
+    width: 760,
+    height: 560,
+    resizable: true,
+    isSingleton: true,
+  },
+  importApp: () => import("../shell/friends/friends-app.js"),
+},
+
+"logs": {
+  config: {
+    id: "logs",
+    title: "Logs",
+    description: "View application logs.",
+    icon: ICONS.logs,
+    width: 440,
+    height: 380,
+    resizable: true,
+    isSingleton: true,
+  },
+  importApp: () => import("../shell/logs/logs-app.js"),
+},
   "buggy-program": {
     config: {
     id: "buggy-program",
