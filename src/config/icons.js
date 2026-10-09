@@ -19,6 +19,10 @@ export const ICONS = {
   16: "/guac-site/icons/16x16trophy-pixel-art.png",
   32: "/guac-site/icons/16x16trophy-pixel-art.png",
   },
+  visitorStats: {
+  16: "/guac-site/icons/bar-chart-pixel.png",
+  32: "/guac-site/icons/bar-chart-pixel.png",
+},
   pdf: {
     16: new URL("../assets/icons/word_001-16.png", import.meta.url).href,
     32: new URL("../assets/icons/word_001-32.png", import.meta.url).href,

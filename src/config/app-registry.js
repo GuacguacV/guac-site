@@ -79,6 +79,21 @@ export const appRegistry = {
   },
     importApp: () => import("../shell/bio/bio-app.js")
   },
+
+  "visitor-stats": {
+    config: {
+      id: "visitor-stats",
+      title: "Visitor Stats",
+      description: "Website visitor statistics.",
+      icon: ICONS.visitorStats,
+      width: 420,
+      height: 340,
+      resizable: false,
+      isSingleton: true,
+    },
+    importApp: () =>
+      import("../shell/visitor-stats/visitor-stats-app.js"),
+  },
   "buggy-program": {
     config: {
     id: "buggy-program",

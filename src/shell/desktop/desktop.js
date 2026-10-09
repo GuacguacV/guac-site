@@ -632,6 +632,31 @@ if (achievementsShortcutPath && achievementsShortcutPath !== correctShortcutPath
 } catch (error) {
   console.error("Failed to create Achievements shortcut:", error);
 }
+try {
+  const desktopPath = "/C:/WINDOWS/Desktop";
+
+  const correctShortcutPath = `${desktopPath}/Visitor Stats.exe.lnk.json`;
+
+const shortcutData = {
+  type: "shortcut",
+  appId: "visitor-stats",
+  args: null,
+  icon: "/icons/bar-chart-pixel.png",
+};
+console.log("Creating Visitor Stats shortcut...");
+  const exists = await existsAsync(correctShortcutPath);
+
+  if (!exists) {
+  await fs.promises.writeFile(
+    correctShortcutPath,
+    JSON.stringify(shortcutData, null, 2),
+  );
+
+  console.log("Visitor Stats shortcut written to:", correctShortcutPath);
+}
+} catch (error) {
+  console.error("Failed to create Visitor Stats shortcut:", error);
+}
 
 desktopController = new DesktopController(desktop);  desktopController.iconManager = new IconManager(desktop, {
     iconSelector: ".explorer-icon",
