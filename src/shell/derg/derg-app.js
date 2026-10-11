@@ -144,11 +144,11 @@ export class DergApp extends Application {
           <p class="derg-subtitle">IN LOVING MEMORY</p>
 
           <p class="derg-message">
-            Remembering a friend.
+            Remembering an awesome friend.
           </p>
 
           <p class="derg-message">
-            This little corner of my website is dedicated to my friend Derg.
+            This little corner of my website is dedicated to my late friend Derg.
           </p>
 
           <hr class="derg-divider">
@@ -157,7 +157,7 @@ export class DergApp extends Application {
             class="derg-button"
             id="derg-memorial-link"
           >
-            Visit Derg's memorial
+            Derg's Eulogy
           </button>
 
           <p class="derg-footer">

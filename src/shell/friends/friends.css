@@ -273,3 +273,12 @@ object-fit: cover;
   outline: 2px dashed #40fffe;
   outline-offset: 2px;
 }
+
+
+
+.friends-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}

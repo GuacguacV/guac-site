@@ -23,24 +23,26 @@ const FRIENDS = [
     songNote: "Because he likes men. He is gay.",
   },
   {
-    name: "Kylee",
+    name: "Klee",
     nickname: "Nickname / Alias",
-    about: "Also gay.",
+    about: "Awesome.",
     personality: "Business-minded.",
     favourites: "Money.",
-    songTitle: "Song Title",
-    artist: "Artist Name",
+    songTitle: "失眠飞行 (Insomnia Flight)",
+    artist: "接个吻，开一枪, 沈以诚, 薛黛霏",
     songNote: "XY.",
+    image: "/guac-site/pfps/klee-pfp.png"
   },
   {
-    name: "Steph",
+    name: "Stephanie",
     nickname: "Nickname / Alias",
-    about: "Lesbian.",
-    personality: "Faggot.",
-    favourites: "Wuh Luh Wuh.",
-    songTitle: "October",
-    artist: "Girl in Red",
-    songNote: "Lesbian song because she is lesbian.",
+    about: "An aspiring future wife, dedicating my strength, hard work, and resilience to my future family. Interested in business, finance, and compliance law which I look forward to applying in my practice internationally. Heavily into wasians and arm workouts.",
+    personality: "Good mixture of nonchalant and funny. Into wasians. Ambivert. Loves calm sports and hobbies. Loves hanging out with girls and talking about anything life or fun. Down for anything, and wants to life max.",
+    favourites: "•  Wasians, Reading, Football and equestrian, Piano, Gym, pokemon, Newjeans and Blackpink, Religious Christian/Catholic, Fashion (high luxury brands - Bape, Supreme, LV, etc)",
+    songTitle: "Steeeam",
+    artist: "Shelly",
+    songNote: "XY.",
+    image: "/guac-site/pfps/steph-pfp.png"
   },
   {
     name: "Audrey",
@@ -61,6 +63,7 @@ const FRIENDS = [
     songTitle: "Song Title",
     artist: "Artist Name",
     songNote: "XY.",
+    image: "/guac-site/pfps/Nico-pfp.png",
   },
   {
     name: "Foxwarde",
@@ -86,12 +89,31 @@ const FRIENDS = [
    {
     name: "Jay",
     nickname: "Nickname / Alias",
-    about: "Gay.",
+    about: "Science guy in oncology/hematology, full time dumbass and part time dog.",
     personality: "Gay asf.",
     favourites: "This dog is really gay.",
-    songTitle: "Song Title",
-    artist: "Artist Name",
+    songTitle: "Hello Rocks - (From 'Hoa' Video Game Soundtrack)",
+    artist: "Johannes Johansson",
     songNote: "XY.",
+    image: "/guac-site/pfps/jaydog.png",
+    socials: [
+    { name: "Discord", url: "https://discord.com/users/189223468212944906" },
+],
+  },
+   {
+    name: "Exquisite",
+    nickname: "Nickname / Alias",
+    about: "XY.",
+    personality: "ENTJ-A.",
+    favourites: "Trading, Driving, Gaming.",
+    songTitle: "Feel Good Inc.",
+    artist: "Gorillaz",
+    songNote: "XY.",
+    image: "/guac-site/pfps/exquisite-pfp.png",
+    socials: [
+    { name: "X", url: "https://x.com/dossiervrp?s=11&t=3yvw_aNiWeugJikyqQrcPg" },
+    { name: "Instagram", url: "https://www.instagram.com/exquisite_ow?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw=="},
+  ],
   },
    {
     name: "ArchonFox",
@@ -102,7 +124,8 @@ const FRIENDS = [
     songTitle: "Song Title",
     artist: "Artist Name",
     songNote: "XY.",
-  },{
+  },
+  {
     name: "Friend 6 or 7",
     nickname: "Nickname / Alias",
     about: "XY.",
@@ -197,10 +220,17 @@ export class FriendsApp extends Application {
                 <div class="friends-personality"></div>
               </section>
 
-              <section class="friends-section">
-                <div class="friends-section-title">FAVOURITES &amp; HOBBIES</div>
-                <div class="friends-favourites"></div>
-              </section>
+              
+<section class="friends-section">
+  <div class="friends-section-title">FAVOURITES &amp; HOBBIES</div>
+  <div class="friends-favourites"></div>
+</section>
+
+<section class="friends-section">
+  <div class="friends-section-title">Socials ↗</div>
+  <div class="friends-socials"></div>
+</section>
+
             </div>
           </main>
         </div>
@@ -268,5 +298,20 @@ content.find(".friends-favourites").text(friend.favourites || "");
 content.find(".friends-song-title").text(friend.songTitle || "");
 content.find(".friends-artist").text(friend.artist || "");
 content.find(".friends-song-note").text(friend.songNote || "");
+
+const socialsContainer = content.find(".friends-socials");
+socialsContainer.empty();
+
+if (friend.socials && friend.socials.length) {
+  friend.socials.forEach((social) => {
+    const link = $("<a>")
+      .attr("href", social.url)
+      .attr("target", "_blank")
+      .attr("rel", "noopener noreferrer")
+      .text(social.name);
+
+    socialsContainer.append(link);
+  });
+}
 }
 }
