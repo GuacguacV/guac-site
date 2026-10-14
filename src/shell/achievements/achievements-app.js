@@ -52,6 +52,12 @@ description:
 },
 {
 type: "real",
+title: "Academic Representative",
+description:
+"Academic Representative for the whole university, representing all students and ensuring that their voices are heard.",
+},
+{
+type: "real",
 title: "BAIL CHALLENGE",
 description:
 "Scored high in a Bail Challenge, competing against other law students and nearly making it to the semi-finals.",
