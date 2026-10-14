@@ -32,9 +32,9 @@ Little thoughts &amp; future plans
 - NOTE: If the site breaks, just refresh! Im 99% sure there shouldn't be any errors here..?
 - i plan on making the songs interactable and playable
 - song section in my own bio
-- Incomplete: Friends.exe is constantly being updated. Profiles still incomplete
+- Incomplete: Friends.exe is constantly being updated. Profiles still unfinished
 - thinking of making these songs in 8-bit?
-- this site lowkey a work in progress-- just like me!
+- this logs app was a pain in the ass to make. I essentially had to debug an invisible error because of a gitignore line
 - if you have any ideas, feel free to email me! check my bio for my email contact :D
         </div>
       </div>
