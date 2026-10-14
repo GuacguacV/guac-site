@@ -54,7 +54,7 @@ description:
 type: "real",
 title: "Academic Representative",
 description:
-"Academic Representative for the whole university, representing all students and ensuring that their voices are heard.",
+"University-wide Academic Representative, representing students across the University and advocating for their academic interests and concerns.",
 },
 {
 type: "real",
