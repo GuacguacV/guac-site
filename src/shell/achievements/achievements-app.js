@@ -52,6 +52,12 @@ description:
 },
 {
 type: "real",
+title: "Faculty Councilor",
+description:
+"Elected to represent students across the Faculty of Arts & Humanities at Students’ Union Council, voting for policies on behalf of the faculty.",
+},
+{
+type: "real",
 title: "Academic Representative",
 description:
 "University-wide Academic Representative, representing students across the University and advocating for their academic interests and concerns.",
