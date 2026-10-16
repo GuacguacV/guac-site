@@ -282,3 +282,34 @@ object-fit: cover;
   align-items: flex-start;
   gap: 6px;
 }
+
+
+.friends-song-note-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.friends-song-note-text.is-expanded {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.friends-read-more {
+  display: inline;
+  margin: 0 0 0 4px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.85em;
+  text-decoration: underline;
+  cursor: pointer;
+  line-height: inherit;
+}

@@ -42,7 +42,7 @@ socials: [
     favourites: "Money.",
     songTitle: "失眠飞行 (Insomnia Flight)",
     artist: "接个吻，开一枪, 沈以诚, 薛黛霏",
-    songNote: "XY.",
+    songNote: "",
     image: "/guac-site/pfps/klee-pfp.png"
   },
   {
@@ -124,12 +124,23 @@ socials: [
     { name: "Discord", url: "https://discord.com/users/189223468212944906" },
 ],
   },
-   {
-    name: "Exquisite",
+    {
+    name: "Angel",
     nickname: "",
-    about: "XY.",
-    personality: "ENTJ-A.",
-    favourites: "Trading, Driving, Gaming.",
+    about: "Totally driven by a deep love for all things peculiar.",
+    personality: "Unapologetically enthusiastic about the things I love, no matter how specific or niche they are. Once something catches my interest, I’ll gladly fall down a rabbit hole for hours just to understand every small detail about it.",
+    favourites: "I looove baking, photography (be it digital or film), walking to literally anywhere, listening to music (special mention to classical, jazz, & bossa nova), reading classic books (mostly from the nyrbs), journaling, and especially watching black and white films. Performative you might say but those has been my interests since the dawn of time so be fr rn.",
+    songTitle: "Cowboys & Angels",
+    artist: "George Michael",
+    image: "/guac-site/pfps/angel-pfp.jpg",
+    songNote: "\"That song is just soooo intoxicating and the second i play it, next thing I know, I’ll be right in the middle of cooking, wooden spoon in hand, and I naturally find myself swaying along in the kitchen while the orange sunset light spills through the window and paints everything gold. I don't really know how to explain the feeling any clearer, but the music just wraps around me like a heavy velvet mist, to the point where even basic evening chores start to feel kind of cinematic, intimate, and deeply romantic—like an actual scene in a movie fr. And it honestly just makes me want to close my eyes and lose myself in that effortless, languid rhythm while sipping a glass of my favorite wine.\"",
+  },
+    {
+    name: "Exquisite",
+    nickname: "Nickname / Alias",
+    about: "\"I'm just in the pursuit of scarce knowledge.\"",
+    personality: "ENTJ-A",
+    favourites: "Trading, Driving, Gaming",
     songTitle: "Feel Good Inc.",
     artist: "Gorillaz",
     songNote: "XY.",
@@ -137,6 +148,7 @@ socials: [
     socials: [
     { name: "X", url: "https://x.com/dossiervrp?s=11&t=3yvw_aNiWeugJikyqQrcPg" },
     { name: "Instagram", url: "https://www.instagram.com/exquisite_ow?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw=="},
+    { name: "Startup", url: "https://vanityplate.org/"},
   ],
   },
    {
@@ -160,7 +172,6 @@ socials: [
     songNote: "XY.",
   },
 ];
-
 export class FriendsApp extends Application {
   static config = {
     id: "friends",
@@ -321,8 +332,31 @@ content.find(".friends-personality").text(friend.personality || "");
 content.find(".friends-favourites").text(friend.favourites || "");
 content.find(".friends-song-title").text(friend.songTitle || "");
 content.find(".friends-artist").text(friend.artist || "");
-content.find(".friends-song-note").text(friend.songNote || "");
+const songNote = friend.songNote || "";
+const noteContainer = content.find(".friends-song-note");
 
+noteContainer.empty();
+
+if (songNote.length > 180) {
+  const noteText = $("<span>")
+    .addClass("friends-song-note-text")
+    .text(songNote);
+
+  const readMore = $("<button>")
+    .attr("type", "button")
+    .addClass("friends-read-more")
+.text("read more...");
+
+  noteContainer.append(noteText, readMore);
+
+  readMore.on("click", function () {
+    const expanded = noteText.hasClass("is-expanded");
+
+    noteText.toggleClass("is-expanded", !expanded);
+$(this).text(expanded ? "read more..." : "read less");  });
+} else {
+  noteContainer.text(songNote);
+}
 const socialsContainer = content.find(".friends-socials");
 socialsContainer.empty();
 
